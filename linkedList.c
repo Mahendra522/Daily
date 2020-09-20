@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 
 struct Node{
@@ -119,4 +120,47 @@ int deleteNodeMiddle(int pos)
     START = START->link;
     return valueDeleted;
   }
+}
+
+void printList(){
+  if(START == NULL){
+    printf("LinkedList is Empty\n");
+  }
+  else{
+    struct Node* temp;
+    temp = START;
+    while(temp!=NULL){
+      printf("%d",temp->info);
+      temp = temp->link;
+    }
+    printf("\n\n");
+  }
+  
+}
+
+int main(){
+  while(5){
+    int ch,num;
+    printf("1. Insert a Number\n");
+    printf("2. Delete a Number\n");
+    printf("3. Print entire List\n");
+ 
+    scanf("%d",&ch);
+
+    switch(ch){
+      case 1:
+        insertNodeEnd();
+        break;
+      case 2:
+        num = deleteNodeEnd();
+        printf("%d deleted\n",num);
+        break;
+      case 3:
+        printList();
+        break;
+      default: printf("Invaid Entry\n");
+    }
+  }
+  
+  return 0;
 }
