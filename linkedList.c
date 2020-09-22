@@ -161,6 +161,6 @@ int main(){
       default: printf("Invaid Entry\n");
     }
   }
-  
+
   return 0;
 }
